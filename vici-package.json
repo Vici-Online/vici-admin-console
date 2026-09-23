@@ -1,0 +1,6 @@
+{
+  "name": "admin-console",
+  "version": "1.0.0",
+  "description": "In-game admin console: file browser, permissions, NPC tools. F12 to toggle.",
+  "source": "https://github.com/Vici-Online/vici-admin-console"
+}

@@ -1,0 +1,331 @@
+/* Admin Console — Retro Orange Theme */
+
+/* Font preload — url() refs are detected by the manifest generator
+   for automatic prefetch + LoadFontFace before document load.
+   url(/ViciDefaults/fonts/VT323-Regular.ttf) url(/ViciDefaults/fonts/SourceCodePro-Regular.ttf)
+*/
+
+/* Window container */
+#adminWindow {
+    position: absolute;
+    width: 600dp;
+    height: 400dp;
+    max-width: 90vw;
+    max-height: 90vh;
+    min-width: 200dp;
+    min-height: 150dp;
+    background-color: #1A1008;
+    border: 2dp #C05500;
+    border-radius: 4dp;
+    overflow: hidden;
+    /* Positioned by JS on open for centering */
+    left: 0;
+    top: 0;
+}
+
+/* Title bar */
+.admin-titlebar {
+    background-color: #C05500;
+    padding: 6dp 10dp;
+}
+
+/* Drag handle (title text) */
+.admin-title {
+    font-family: "VT323";
+    font-size: 20dp;
+    color: #FFB347;
+    text-transform: uppercase;
+    letter-spacing: 1dp;
+    cursor: pointer;
+}
+
+/* Close button */
+.admin-close-btn {
+    font-family: "Source Code Pro";
+    font-size: 14dp;
+    font-weight: bold;
+    color: #FFB347;
+    background-color: #3A2000;
+    border: 1dp #5A3000;
+    border-radius: 3dp;
+    padding: 2dp 8dp;
+}
+
+.admin-close-btn:hover {
+    background-color: #FF4500;
+    color: #FFFFFF;
+    border-color: #FF6A33;
+}
+
+.admin-close-btn:active {
+    background-color: #CC3700;
+}
+
+/* Tab bar */
+.admin-tabs {
+    background-color: #2A1808;
+    border-bottom: 1dp #5A3000;
+    padding: 0 4dp;
+}
+
+.admin-tab {
+    font-family: "Source Code Pro";
+    font-size: 12dp;
+    color: #8A6040;
+    background-color: transparent;
+    padding: 6dp 14dp;
+    cursor: pointer;
+}
+
+.admin-tab:hover {
+    color: #FFB347;
+}
+
+.admin-tab-active {
+    font-family: "Source Code Pro";
+    font-size: 12dp;
+    color: #FFB347;
+    background-color: #1A1008;
+    border-bottom: 2dp #C05500;
+    padding: 6dp 14dp;
+    cursor: pointer;
+}
+
+/* Content area */
+.admin-content {
+    font-family: "Source Code Pro";
+    font-size: 13dp;
+    color: #D4A574;
+    background-color: #1A1008;
+}
+
+/* Chat messages area */
+.admin-chat-messages {
+    overflow: auto;
+    padding: 6dp 8dp;
+}
+
+.admin-chat-messages div {
+    display: block;
+}
+
+.admin-chat-sender {
+    font-weight: bold;
+    color: #C05500;
+    font-size: 13dp;
+    margin-right: 6dp;
+}
+
+.admin-chat-text {
+    color: #D4A574;
+    font-size: 13dp;
+}
+
+/* Chat input row */
+.admin-chat-input-row {
+    background-color: #2A1808;
+    border-top: 1dp #5A3000;
+    padding: 4dp 6dp;
+}
+
+.admin-chat-input {
+    font-family: "Source Code Pro";
+    font-size: 13dp;
+    color: #D4A574;
+    background-color: #1A1008;
+    border: 1dp #5A3000;
+    border-radius: 3dp;
+    padding: 4dp 6dp;
+}
+
+.admin-chat-send-btn {
+    font-family: "Source Code Pro";
+    font-size: 12dp;
+    font-weight: bold;
+    color: #FFB347;
+    background-color: #3A2000;
+    border: 1dp #5A3000;
+    border-radius: 3dp;
+    padding: 4dp 10dp;
+    cursor: pointer;
+}
+
+.admin-chat-send-btn:hover {
+    background-color: #C05500;
+    color: #FFFFFF;
+}
+
+.admin-chat-send-btn:active {
+    background-color: #8A3A00;
+}
+
+/* Resize grip */
+.admin-resize-grip {
+    width: 16dp;
+    height: 16dp;
+    font-family: "Source Code Pro";
+    font-size: 10dp;
+    color: #5A3000;
+    text-align: right;
+    cursor: pointer;
+}
+
+.admin-resize-grip:hover {
+    color: #FFB347;
+}
+
+/* File browser */
+.admin-files-toolbar {
+    background-color: #2A1808;
+    border-bottom: 1dp #5A3000;
+    padding: 4dp 6dp;
+}
+
+.admin-files-nav-btn {
+    font-family: "Source Code Pro";
+    font-size: 12dp;
+    font-weight: bold;
+    color: #FFB347;
+    background-color: #3A2000;
+    border: 1dp #5A3000;
+    border-radius: 3dp;
+    padding: 3dp 8dp;
+    cursor: pointer;
+}
+
+.admin-files-nav-btn:hover {
+    background-color: #C05500;
+    color: #FFFFFF;
+}
+
+.admin-files-action-btn {
+    font-family: "Source Code Pro";
+    font-size: 12dp;
+    font-weight: bold;
+    color: #FFB347;
+    background-color: #3A2000;
+    border: 1dp #5A3000;
+    border-radius: 3dp;
+    padding: 3dp 10dp;
+    cursor: pointer;
+}
+
+.admin-files-action-btn:hover {
+    background-color: #C05500;
+    color: #FFFFFF;
+}
+
+.admin-files-action-btn:active {
+    background-color: #8A3A00;
+}
+
+.admin-files-path {
+    font-family: "Source Code Pro";
+    font-size: 12dp;
+    color: #D4A574;
+    padding: 0 6dp;
+}
+
+.admin-files-list {
+    overflow: auto;
+    padding: 2dp 4dp;
+}
+
+.admin-files-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 3dp 6dp;
+    cursor: pointer;
+}
+
+.admin-files-row:hover {
+    background-color: #2A1808;
+}
+
+.admin-files-icon {
+    width: 16dp;
+    height: 16dp;
+    margin-right: 6dp;
+}
+
+.admin-files-name {
+    font-family: "Source Code Pro";
+    font-size: 12dp;
+    color: #D4A574;
+    flex: 1;
+}
+
+.admin-files-name-dir {
+    font-family: "Source Code Pro";
+    font-size: 12dp;
+    color: #FFB347;
+    flex: 1;
+}
+
+.admin-files-size {
+    font-family: "Source Code Pro";
+    font-size: 11dp;
+    color: #8A6040;
+    margin-left: 8dp;
+}
+
+.admin-files-status {
+    font-family: "Source Code Pro";
+    font-size: 11dp;
+    color: #8A6040;
+    background-color: #2A1808;
+    border-top: 1dp #5A3000;
+    padding: 2dp 6dp;
+}
+
+/* Permissions management */
+.admin-perms-toolbar {
+    background-color: #2A1808;
+    border-bottom: 1dp #5A3000;
+    padding: 4dp 6dp;
+}
+
+.admin-perms-add-row {
+    background-color: #2A1808;
+    border-top: 1dp #5A3000;
+    padding: 4dp 6dp;
+}
+
+.admin-perms-user {
+    font-family: "Source Code Pro";
+    font-size: 12dp;
+    font-weight: bold;
+    color: #C05500;
+    padding: 4dp 6dp 2dp 6dp;
+}
+
+.admin-perms-entry {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 2dp 6dp 2dp 16dp;
+}
+
+.admin-perms-perm {
+    font-family: "Source Code Pro";
+    font-size: 11dp;
+    color: #D4A574;
+    flex: 1;
+}
+
+.admin-perms-revoke-btn {
+    font-family: "Source Code Pro";
+    font-size: 10dp;
+    color: #FF4500;
+    background-color: transparent;
+    border: 1dp #5A3000;
+    border-radius: 2dp;
+    padding: 1dp 6dp;
+    cursor: pointer;
+}
+
+.admin-perms-revoke-btn:hover {
+    background-color: #FF4500;
+    color: #FFFFFF;
+}

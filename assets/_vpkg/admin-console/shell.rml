@@ -1,0 +1,64 @@
+<rml>
+    <head>
+        <title>Admin Console</title>
+        <link type="text/rcss" href="/ViciDefaults/rml/utilities.rcss"/>
+        <link type="text/rcss" href="admin.rcss"/>
+    </head>
+    <body>
+        <div id="adminWindow" class="flex flex-col">
+            <!-- Title bar -->
+            <div class="admin-titlebar flex flex-row justify-between items-center">
+                <span id="adminDragHandle" class="admin-title">Vici Admin Console</span>
+                <button id="adminCloseBtn" class="admin-close-btn">X</button>
+            </div>
+
+            <!-- Tab bar -->
+            <div id="adminTabs" class="admin-tabs flex flex-row">
+                <button id="tab-chat" class="admin-tab-active">Chat</button>
+                <button id="tab-files" class="admin-tab">Files</button>
+                <button id="tab-permissions" class="admin-tab">Permissions</button>
+            </div>
+
+            <!-- Content area -->
+            <div class="admin-content flex flex-col flex-1">
+                <div id="content-chat" class="flex flex-col flex-1">
+                    <div id="chatMessages" class="admin-chat-messages flex-1"></div>
+                    <div class="admin-chat-input-row flex flex-row gap-1">
+                        <input id="chatInput" type="text" class="admin-chat-input flex-1" />
+                        <button id="chatSendBtn" class="admin-chat-send-btn">Send</button>
+                    </div>
+                </div>
+
+                <!-- Files tab -->
+                <div id="content-files" class="flex flex-col flex-1" style="display: none;">
+                    <div id="filesToolbar" class="admin-files-toolbar flex flex-row items-center gap-1">
+                        <button id="filesBackBtn" class="admin-files-nav-btn">&lt;</button>
+                        <span id="filesPath" class="admin-files-path flex-1">/</span>
+                        <button id="filesUploadBtn" class="admin-files-action-btn">Upload</button>
+                    </div>
+                    <div id="filesList" class="admin-files-list flex-1"></div>
+                    <div id="filesStatus" class="admin-files-status"></div>
+                </div>
+
+                <!-- Permissions tab -->
+                <div id="content-permissions" class="flex flex-col flex-1" style="display: none;">
+                    <div class="admin-perms-toolbar flex flex-row items-center gap-1">
+                        <span class="admin-files-path flex-1">Permission Management</span>
+                        <button id="permsRefreshBtn" class="admin-files-action-btn">Refresh</button>
+                    </div>
+                    <div id="permsList" class="admin-files-list flex-1"></div>
+                    <div class="admin-perms-add-row flex flex-row gap-1">
+                        <input id="permsUserInput" type="text" class="admin-chat-input flex-1" placeholder="username" />
+                        <input id="permsPermInput" type="text" class="admin-chat-input flex-1" placeholder="files:rw:/" />
+                        <button id="permsGrantBtn" class="admin-files-action-btn">Grant</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resize grip (bottom-right corner) -->
+            <div class="flex flex-row justify-end">
+                <div id="resizeHandle" class="admin-resize-grip">//</div>
+            </div>
+        </div>
+    </body>
+</rml>
