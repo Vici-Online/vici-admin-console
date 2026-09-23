@@ -1,6 +1,8 @@
 {
+  "formatVersion": 1,
   "name": "admin-console",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "In-game admin console: file browser, permissions, NPC tools. F12 to toggle.",
-  "source": "https://github.com/Vici-Online/vici-admin-console"
+  "source": "https://github.com/Vici-Online/vici-admin-console",
+  "rootScripts": ["_vpkg/admin-console/adminCore.ts"]
 }

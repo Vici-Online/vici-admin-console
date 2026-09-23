@@ -1,16 +1,17 @@
 # admin-console
 
+v1.0.0 is broken (manifest lacks `formatVersion`; install refuses it). Use v1.0.1+.
+
 The Vici in-game admin console (F12): file browser, admin permissions, NPC tools.
 
 ## Install
 
 From the VS Code extension (dev channel), as a devAdmin:
 
-    packages.install {name: "admin-console", source: "https://github.com/Vici-Online/vici-admin-console", tag: "v1.0.0"}
+    packages.install {name: "admin-console", source: "https://github.com/Vici-Online/vici-admin-console", tag: "v1.0.1"}
 
-Then add the root script to `serverOptions.json` and restart:
-
-    "rootScripts": [..., "_vpkg/admin-console/adminCore"]
+The package registers its own root script (`_vpkg/admin-console/adminCore.ts`);
+do not add it to `serverOptions.json`. Restart the server to load it.
 
 The first player to log in on a server with no admins becomes superadmin
 (`files:rw:/`).
@@ -25,8 +26,8 @@ The first player to log in on a server with no admins becomes superadmin
 
 ## Migrating from the in-tree admin console
 
-Replace `admin/adminCore.ts` in `rootScripts` with `_vpkg/admin-console/adminCore`,
-then delete `scripts/serverside/admin/`, `scripts/clientside/admin/` and
+Remove `admin/adminCore.ts` from `rootScripts` in `serverOptions.json` (otherwise
+admins get two consoles), then delete `scripts/serverside/admin/`, `scripts/clientside/admin/` and
 `ViciDefaults/rml/admin/`. Chat commands that lived in the old `adminCore.ts`
 are not part of this package; keep them in a game script that handles
 `onPlayerChatsCommand`.
